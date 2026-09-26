@@ -1,0 +1,18 @@
+package net.edenuuu.welldonebosses.datagen;
+
+import net.edenuuu.welldonebosses.WellDoneBosses;
+import net.edenuuu.welldonebosses.item.ModItems;
+import net.minecraft.data.PackOutput;
+import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+
+public class ModItemModelProvider extends ItemModelProvider {
+    public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
+        super(output, WellDoneBosses.MOD_ID, existingFileHelper);
+    }
+
+    @Override
+    protected void registerModels() {
+        withExistingParent(ModItems.SLIMUSH_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+    }
+}
